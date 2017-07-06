@@ -30,11 +30,13 @@ module.exports.validateToken = (req, res, next) => {
                 .json({
                     meta: {
                         type: "error",
-                        status_code: 401
+                        status_code: 400
                     },
 
                     body: {
-                        message: "A token must be passed."
+                        message: `Bad request. Please check that you did pass an
+                        Authorization Header, and that it's in the correct
+                        format.`
                     }
                 })
     }
